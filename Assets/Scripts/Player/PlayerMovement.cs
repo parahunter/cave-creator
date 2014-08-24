@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start()
     {
+        Screen.lockCursor = true;
+
         Engine1Rot = Engine1.GetComponent<Rotation>();
         Engine2Rot = Engine2.GetComponent<Rotation>();
         Engine1PS = Engine1.gameObject.transform.FindChild("Particle System").GetComponent<ParticleSystem>();
