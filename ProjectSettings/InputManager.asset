@@ -40,7 +40,7 @@ InputManager:
     m_Name: UpThrust
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left ctrl
+    negativeButton: left shift
     positiveButton: space
     altNegativeButton: 
     altPositiveButton: 
@@ -57,7 +57,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left shift
+    positiveButton: 
     altNegativeButton: 
     altPositiveButton: mouse 1
     gravity: 1000
@@ -101,7 +101,7 @@ InputManager:
     axis: 1
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Mouse ScrollWheel
+    m_Name: ScrollWheel
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
