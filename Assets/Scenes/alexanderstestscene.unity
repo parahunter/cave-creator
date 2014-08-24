@@ -189,8 +189,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1431490651}
-  m_LocalRotation: {x: .70710665, y: 0, z: 0, w: .707106948}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: -100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -203,6 +203,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1734254926}
   - 114: {fileID: 1734254925}
+  - 33: {fileID: 1734254928}
+  - 114: {fileID: 1734254927}
+  - 23: {fileID: 1734254929}
   m_Layer: 0
   m_Name: CaveGenerator
   m_TagString: Untagged
@@ -221,17 +224,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51af87812441c4b4eab25052a2997ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minLength: 30
+  minLength: 10
   maxLength: 100
-  minWidth: 30
+  minWidth: 10
   maxWidth: 100
-  minHeight: 5
-  maxHeight: 15
-  curveAngleDitterDegrees: 10
+  minHeight: 15
+  maxHeight: 50
+  curveAngleDitterDegrees: 20
   curveMidPointsMinDistance: .100000001
   curveMidPointsMaxDistance: .5
-  minHeightDitter: .300000012
-  maxHeightDitter: .800000012
+  minHeightDitter: 1
+  maxHeightDitter: 1
+  meshGenerator: {fileID: 1734254927}
 --- !u!4 &1734254926
 Transform:
   m_ObjectHideFlags: 0
@@ -243,6 +247,47 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1734254927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734254924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4461042b2ec15634fb15592eb3fdac6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horziontalIntersections: 20
+  verticalIntersections: 20
+--- !u!33 &1734254928
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734254924}
+  m_Mesh: {fileID: 0}
+--- !u!23 &1734254929
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1734254924}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3417103bf44fa0c4b99cb4d822c1809f, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &1927056795
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +314,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Intensity: .360000014
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -300,7 +345,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927056795}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
