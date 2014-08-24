@@ -9,6 +9,13 @@ public class PlayerShooting : MonoBehaviour {
     public float timeDelay;
     private float timeSinceLast;
 
+    private AudioSource Audio;
+
+    void Start()
+    {
+        Audio = GetComponent<AudioSource>();
+    }
+
 
     void Update()
     {
@@ -20,6 +27,7 @@ public class PlayerShooting : MonoBehaviour {
             {
                 GameObject NewFlare = Instantiate(Flare, transform.position, transform.rotation) as GameObject;
                 NewFlare.rigidbody.AddForce(transform.forward * fireForce);
+                Audio.Play();
                 timeSinceLast = 0;
             }
         //}
