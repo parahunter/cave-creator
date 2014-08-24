@@ -3,40 +3,34 @@ using System.Collections;
 
 public class CameraFollow : MonoBehaviour {
 
-    private GameObject PlayerCtrl;
-    public Vector3 PlayerPos;
+    private Transform PlayerTran;
+    private Transform CamFollowPoint;
 
+    public float followSpeed;
     public float Distance;
     public float Angle;
 
     public float ScrollLimitLower;
     public float ScrollLimitUpper;
 
+    private Vector3 PlayerPos;
+    private Vector3 PrevPlayerPos;
+
 
     void Start()
     {
-        PlayerCtrl = GameObject.FindGameObjectWithTag("Player");
+        PlayerTran = GameObject.FindGameObjectWithTag("Player").transform;
+        CamFollowPoint = PlayerTran.FindChild("CameraFollowPoint");
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        PlayerCtrl = GameObject.FindGameObjectWithTag("Player");
+        PlayerPos = CamFollowPoint.position;
 
-        if (Input.GetAxis("ScrollWheel") < 0)
-            Distance += 0.1f;
-        else if (Input.GetAxis("ScrollWheel") > 0)
-            Distance -= 0.1f;
+        float rate = followSpeed / Time.deltaTime;
+        transform.position = Vector3.Lerp(transform.position, PlayerPos, rate);
 
-        if (Distance < ScrollLimitLower) Distance = ScrollLimitLower;
-        else if (Distance > ScrollLimitUpper) Distance = ScrollLimitUpper;
-
-        PlayerPos = PlayerCtrl.transform.localPosition;
-        PlayerPos.x += 0 * Distance;
-        PlayerPos.y += 14 * Distance;
-        PlayerPos.z += Angle * Distance;
-
-        transform.position = PlayerPos;
-        transform.LookAt(PlayerCtrl.transform);
+        transform.LookAt(PlayerTran);
     }
 
 }
