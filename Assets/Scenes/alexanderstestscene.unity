@@ -174,7 +174,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 100
+  orthographic size: 120
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -225,9 +225,13 @@ MonoBehaviour:
   maxLength: 100
   minWidth: 30
   maxWidth: 100
-  curveAngleDitterDegrees: 20
+  minHeight: 5
+  maxHeight: 15
+  curveAngleDitterDegrees: 10
   curveMidPointsMinDistance: .100000001
   curveMidPointsMaxDistance: .5
+  minHeightDitter: .300000012
+  maxHeightDitter: .800000012
 --- !u!4 &1734254926
 Transform:
   m_ObjectHideFlags: 0

@@ -26,6 +26,9 @@ public class WorldGenerator : MonoBehaviour
 		
 		caveGenerator.GenerateRepresentation();
 		
+		
+		
+		caveGenerator.GenerateMesh();
 	}
 	
 	public void OnDrawGizmos()

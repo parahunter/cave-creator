@@ -7,19 +7,30 @@ public class CaveGenerator : ProceduralGenerator
 	public float maxLength = 50f;
 	public float minWidth = 30f;
 	public float maxWidth = 50f;
+	public float minHeight = 10;
+	public float maxHeight = 10;
 	
 	public float curveAngleDitterDegrees = 20f;
 	public float curveMidPointsMinDistance = 0.1f;
 	public float curveMidPointsMaxDistance = 0.5f;
-		
+	public float minHeightDitter = 0.3f;	
+	public float maxHeightDitter = 0.8f;
+	
+	public MeshFromBezierGenerator meshGenerator;
+	
 	Vector3[] contourPoints = new Vector3[8];
 	UBezier[] contourCurve = new UBezier[8];
+	UBezier[] ceilingCurves = new UBezier[8];
+	UBezier[] floorCurves = new UBezier[8];
+	
+	
 	
 	#region implemented abstract members of ProceduralGenerator
 	public override void GenerateRepresentation ()
 	{
 		GenerateContourPoints();
 		GenerateContourCurve();
+		GenerateCeilingAndFloorCurves();
 	}
 	
 	void GenerateContourPoints()
@@ -70,6 +81,24 @@ public class CaveGenerator : ProceduralGenerator
 		}
 	}
 	
+	void GenerateCeilingAndFloorCurves()
+	{
+		float ceilingHeight = Random.Range(minHeight, maxHeight);
+		
+		for(int i = 0 ; i < ceilingCurves.Length ; i++)
+		{
+			Vector3 p0 = contourCurve[i].p0;
+			
+			Vector3 p1 = Vector3.up * Random.Range(minHeightDitter, maxHeightDitter) * ceilingHeight + contourCurve[i].p0;
+			Vector3 p2 = p1;			
+			Vector3 p3 = Vector3.up * ceilingHeight;
+			
+			ceilingCurves[i] = new UBezier(p0, p1, p2, p3);			
+		}
+						
+		
+	}
+	
 	Vector3 GenerateBezierMidPoint(Vector3 direction, float distance, float angleDitter)
 	{
 		Quaternion rotation = Quaternion.Euler(new Vector3(0, angleDitter, 0));
@@ -84,16 +113,23 @@ public class CaveGenerator : ProceduralGenerator
 		for(int i = 0 ; i < contourPoints.Length; i++)
 			Gizmos.DrawLine(contourPoints[i], contourPoints[ (i+1) % contourPoints.Length]);
 		
+		Gizmos.color = Color.red;
 		for(int i = 0 ; i < contourCurve.Length ; i++)
 		{	
-			Gizmos.color = Color.red;
 			contourCurve[i].Visualise();
 		}
+		
+		for(int i = 0 ; i < ceilingCurves.Length; i++)
+		{	
+			ceilingCurves[i].Visualise();
+		}
+		
+		
 	}
 	
 	public override void GenerateMesh ()
 	{
-		throw new System.NotImplementedException ();
+		meshGenerator.Generate(contourCurve, ceilingCurves, floorCurves);
 	}
 	
 	#endregion
