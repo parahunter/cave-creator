@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour {
     public float sideSpeedCoef;
     public float upSpeedCoef;
 
+    public float ABSpeedMod;
+
     private float forwardSpeedOri;
 
 
@@ -19,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate()
     {
         if (Input.GetButton("Afterburner"))
-            forwardSpeedCoef = forwardSpeedOri * 2;
+            forwardSpeedCoef = forwardSpeedOri * ABSpeedMod;
         else forwardSpeedCoef = forwardSpeedOri;
 
         Vector3 MoveDir = (transform.forward * Input.GetAxis("ForwardThrust") * forwardSpeedCoef * Time.deltaTime)
