@@ -16336,6 +16336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10ec00aa0aa1102419660d1162375ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Engine1Rot: {fileID: 158184265}
+  Engine2Rot: {fileID: 732299925}
+  EngineLight: {fileID: 1447784799}
   forwardSpeedCoef: 2000
   sideSpeedCoef: 1500
   upSpeedCoef: 1500
