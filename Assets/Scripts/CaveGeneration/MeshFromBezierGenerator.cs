@@ -92,6 +92,8 @@ public class MeshFromBezierGenerator : MonoBehaviour
         
 		GetComponent<MeshFilter>().mesh = mesh;
 		
+		GetComponent<MeshCollider>().sharedMesh = mesh;
+        
     }
 	            
 	int VertexIndex(int absolouteIndex)
