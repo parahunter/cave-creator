@@ -16275,7 +16275,7 @@ GameObject:
   - 65: {fileID: 543565728}
   m_Layer: 0
   m_Name: _PlayerShipPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29861,6 +29861,7 @@ GameObject:
   - 92: {fileID: 1023507946}
   - 124: {fileID: 1023507945}
   - 81: {fileID: 1023507944}
+  - 114: {fileID: 1023507949}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -29929,6 +29930,22 @@ Transform:
   m_LocalScale: {x: 1.23616719, y: 1, z: 6.18773699}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1023507949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1023507943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8931c80861418499ecce521d38eaa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPos: {x: 0, y: 0, z: 0}
+  Distance: .300000012
+  Angle: -50
+  ScrollLimitLower: .200000003
+  ScrollLimitUpper: .800000012
 --- !u!1 &1025151090
 GameObject:
   m_ObjectHideFlags: 0
