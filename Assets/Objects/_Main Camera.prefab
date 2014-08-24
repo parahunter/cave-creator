@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c8931c80861418499ecce521d38eaa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPos: {x: 0, y: 0, z: 0}
+  followSpeed: .00150000001
   Distance: .300000012
   Angle: -50
   ScrollLimitLower: .200000003
