@@ -50,8 +50,8 @@ public class UBezier
 		float oneMinusT = 1 - t;
 
 		Vector3 first = Mathf.Pow(oneMinusT, 3) * p0;
-		Vector3 second = 3 * Mathf.Pow(oneMinusT,2) * t * p1;
-		Vector3 third = 3 * oneMinusT * Mathf.Pow(t,2) * p2;
+		Vector3 second = (3 * Mathf.Pow(oneMinusT,2) ) * t * p1;
+		Vector3 third = (3 * oneMinusT * Mathf.Pow(t,2)) * p2;
 		Vector3 fourth = Mathf.Pow(t, 3) * p3;
 
 		return first + second + third + fourth;
@@ -81,9 +81,9 @@ public class UBezier
 		float oldT = 0;
 		for(float t = interpolationStepSize ; t < 1 + interpolationStepSize ; t += interpolationStepSize)
 		{
-			Vector2 oldPoint = Evaluate(oldT);
-			Vector2 newPoint = Evaluate(t);
-
+			Vector3 oldPoint = Evaluate(oldT);
+			Vector3 newPoint = Evaluate(t);
+			
 			Gizmos.DrawLine(oldPoint, newPoint);
 			oldT = t;
 		}

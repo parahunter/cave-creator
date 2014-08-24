@@ -30,6 +30,9 @@ public class WorldGenerator : MonoBehaviour
 	
 	public void OnDrawGizmos()
 	{
+		if(Application.isPlaying == false)
+			return;
+	
 		caveGenerator.VisualiseRepresentation();
 	}
 }
