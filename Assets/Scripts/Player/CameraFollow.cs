@@ -7,12 +7,7 @@ public class CameraFollow : MonoBehaviour {
     private Transform CamFollowPoint;
 
     public float followSpeed;
-    public float Distance;
-    public float Angle;
-
-    public float ScrollLimitLower;
-    public float ScrollLimitUpper;
-
+ 
     private Vector3 PlayerPos;
     private Vector3 PrevPlayerPos;
 

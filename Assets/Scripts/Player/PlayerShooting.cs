@@ -14,15 +14,15 @@ public class PlayerShooting : MonoBehaviour {
     {
         timeSinceLast += Time.deltaTime;
 
-        if (timeSinceLast > timeDelay)
-        {
+        //if (timeSinceLast > timeDelay)
+        //{
             if (Input.GetButtonDown("FireFlare"))
             {
                 GameObject NewFlare = Instantiate(Flare, transform.position, transform.rotation) as GameObject;
                 NewFlare.rigidbody.AddForce(transform.forward * fireForce);
                 timeSinceLast = 0;
             }
-        }
+        //}
     }
 
 }
