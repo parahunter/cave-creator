@@ -68,7 +68,6 @@ public class MusicController : MonoBehaviour
 			
 			while(f <= 1f)
 			{
-				print ("f " + f);
 				float fadeValue = fadeCurve.Evaluate(f); 
 				sources[(activeSource + 1) % sources.Length].volume = volume * fadeValue;
 				sources[(activeSource) % sources.Length].volume = volume * (1 - fadeValue);
