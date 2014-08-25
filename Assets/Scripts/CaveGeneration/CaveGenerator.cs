@@ -87,13 +87,19 @@ public class CaveGenerator : ProceduralGenerator
 		
 		for(int i = 0 ; i < ceilingCurves.Length ; i++)
 		{
-			Vector3 p0 = contourCurve[i].p0;
+			Vector3 p0 = Vector3.up * ceilingHeight;
 			
 			Vector3 p1 = Vector3.up * Random.Range(minHeightDitter, maxHeightDitter) * ceilingHeight + contourCurve[i].p0;
 			Vector3 p2 = p1;			
-			Vector3 p3 = Vector3.up * ceilingHeight;
+			Vector3 p3 = contourCurve[i].p0;
 			
-			ceilingCurves[i] = new UBezier(p0, p1, p2, p3);			
+			ceilingCurves[i] = new UBezier(p0, p1, p2, p3);
+			
+			p1.y *= -1;
+			p2.y *= -1;
+			p0.y *= -1;
+						
+			floorCurves[i] = new UBezier(p3, p2, p1, p0);									
 		}
 						
 		
@@ -122,6 +128,11 @@ public class CaveGenerator : ProceduralGenerator
 		for(int i = 0 ; i < ceilingCurves.Length; i++)
 		{	
 			ceilingCurves[i].Visualise();
+		}
+		
+		for(int i = 0 ; i < floorCurves.Length; i++)
+		{	
+			floorCurves[i].Visualise();
 		}
 		
 		

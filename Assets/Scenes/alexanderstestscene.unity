@@ -13,12 +13,12 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: .687626779, g: .588235259, b: 1, a: 1}
   m_FogMode: 3
   m_FogDensity: .00999999978
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+  m_AmbientLight: {r: 0, g: 0, b: 0, a: 0}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -107,6 +107,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5cad58aefd4ff3a46bd29dadfe0d18a5, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5cad58aefd4ff3a46bd29dadfe0d18a5, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3395,10 +3399,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: .00150000001
-  Distance: .300000012
-  Angle: -50
-  ScrollLimitLower: .200000003
-  ScrollLimitUpper: .800000012
 --- !u!81 &1621992179
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3500,7 +3500,7 @@ MonoBehaviour:
   minWidth: 10
   maxWidth: 100
   minHeight: 15
-  maxHeight: 50
+  maxHeight: 20
   curveAngleDitterDegrees: 20
   curveMidPointsMinDistance: .100000001
   curveMidPointsMaxDistance: .5
@@ -3529,8 +3529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4461042b2ec15634fb15592eb3fdac6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horziontalIntersections: 20
-  verticalIntersections: 20
+  horziontalIntersections: 5
+  verticalIntersections: 10
+  invert: 1
 --- !u!33 &1734254928
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3594,7 +3595,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927056795}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
