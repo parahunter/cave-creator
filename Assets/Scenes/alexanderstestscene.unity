@@ -1545,7 +1545,6 @@ Transform:
   - {fileID: 1734254926}
   - {fileID: 1590467275}
   - {fileID: 197457550}
-  - {fileID: 1948741025}
   - {fileID: 792667981}
   - {fileID: 1840276176}
   - {fileID: 1138514865}
@@ -3075,7 +3074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caveGenerator: {fileID: 1734254925}
   placementGenerator: {fileID: 1138514866}
-  debugSeed: 1337
+  debugSeed: 9019
 --- !u!4 &889609653
 Transform:
   m_ObjectHideFlags: 0
@@ -4198,6 +4197,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToPlace:
   - {fileID: 400000, guid: 6a4f376acfcd95f4588b758a11db028f, type: 2}
+  - {fileID: 400000, guid: bf4c164b036bf854799c5b0e5aa2f5e0, type: 2}
+  - {fileID: 400002, guid: 0e5993154720bee4dab51cc3d416bd68, type: 2}
+  - {fileID: 400008, guid: 2cf02967f3255214db7d224ef1be4ea8, type: 2}
   placeUpright: 0
   placementGenerator: {fileID: 1138514866}
   category: 2
@@ -4320,15 +4322,15 @@ MonoBehaviour:
   fadeCurve:
     serializedVersion: 2
     m_Curve:
-    - time: -.0190668739
-      value: -.00297250273
-      inSlope: .00394244539
-      outSlope: .00394244539
+    - time: .00130039011
+      value: 1.90921128e-08
+      inSlope: .087069422
+      outSlope: .087069422
       tangentMode: 0
-    - time: 5.04685116
-      value: .998994172
-      inSlope: .649128497
-      outSlope: .649128497
+    - time: .996098876
+      value: .989583254
+      inSlope: -.0328298137
+      outSlope: -.0328298137
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -4342,7 +4344,7 @@ Transform:
   m_LocalPosition: {x: -146.693939, y: -8.06716537, z: 7.76296759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 514834727}
+  m_Father: {fileID: 0}
 --- !u!1 &2113883147
 GameObject:
   m_ObjectHideFlags: 0
