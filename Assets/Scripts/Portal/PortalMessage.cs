@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PortalMessage : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+public class PortalMessage : MonoBehaviour 
+{
+	public int oldSeed;
+	public int newSeed;
+	public static PortalMessage message;
+		
 }

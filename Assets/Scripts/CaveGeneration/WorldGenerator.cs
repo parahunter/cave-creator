@@ -7,10 +7,18 @@ public class WorldGenerator : MonoBehaviour
 	public CavePlacementGenerator placementGenerator;
 	public int debugSeed = 1337;
 			
+	public static int currentSeed
+	{
+		get;
+		private set;
+	}		
+			
 	// Use this for initialization
 	void Awake () 
 	{
-		if(debugSeed != 0)
+		if(PortalMessage.message != null)
+			GenerateWorld(PortalMessage.message.newSeed);	
+		else		
 			GenerateWorld(debugSeed);			
 		
 	}
@@ -23,13 +31,16 @@ public class WorldGenerator : MonoBehaviour
 	
 	public void GenerateWorld(int seed)
 	{
+		print( "generating world with seed " + seed);
+		currentSeed = seed;
 		Random.seed = seed;
 		
 		caveGenerator.GenerateRepresentation();
 		
-		placementGenerator.GeneratePlacementPoints();
-		
 		caveGenerator.GenerateMesh();
+		
+		placementGenerator.GeneratePlacementPoints();
+				
 	}
 	
 	public void OnDrawGizmos()

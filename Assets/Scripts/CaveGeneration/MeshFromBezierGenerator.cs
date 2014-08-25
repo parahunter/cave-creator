@@ -9,17 +9,21 @@ public class MeshFromBezierGenerator : MonoBehaviour
 							
 	Vector3[] vertices;				
 	int[] triangles;
+	Vector3[] normals;
 	
 	public bool invert = false;
+	int offset;
+	int contourCount;
 	
-	public void Generate(UBezier[] contour, UBezier[] ceiling, UBezier[] floor)
+    public void Generate(UBezier[] contour, UBezier[] ceiling, UBezier[] floor)
 	{
 		Mesh mesh = new Mesh();
 		
 		vertices = new Vector3[horziontalIntersections * verticalIntersections * contour.Length];
 		triangles = new int[(horziontalIntersections ) * (verticalIntersections ) * contour.Length * 6]; 
 		
-		int offset = horziontalIntersections * verticalIntersections;
+		offset = horziontalIntersections * verticalIntersections;
+		contourCount = contour.Length;
 		
 		int quadsPerSegment = (horziontalIntersections) * (verticalIntersections);
         		
@@ -27,12 +31,12 @@ public class MeshFromBezierGenerator : MonoBehaviour
 		{
 			UBezier contourBezier = contour[c];
 						
-			for(int i = 0 ; i < horziontalIntersections ; i++)
+			for(int h = 0 ; h < horziontalIntersections ; h++)
 			{	
-				for(int k = 0 ; k < verticalIntersections ; k++)
+				for(int v = 0 ; v < verticalIntersections ; v++)
 				{
-					float fi = (float)i / horziontalIntersections;
-					float fk = (float)k / (verticalIntersections - 1);
+					float fh = (float)h / horziontalIntersections;
+					float fv = (float)v / (verticalIntersections - 1);
 					
 					UBezier ceilingBezierStart = ceiling[c];
 					UBezier ceilingBezierEnd = ceiling[(c+1) % floor.Length];
@@ -40,24 +44,23 @@ public class MeshFromBezierGenerator : MonoBehaviour
 					Vector3 startEndPoint = ceilingBezierStart.p3;
 					Vector3 endEndPoint = ceilingBezierEnd.p3;
 					
-					
 					if(floor != null)
 					{
-						if(k > verticalIntersections / 2)
+						if(v > verticalIntersections / 2)
 						{
 							ceilingBezierStart = floor[c];
 							ceilingBezierEnd = floor[(c+1) % floor.Length];
 //							startEndPoint = ceilingBezierStart.p0;
 //							endEndPoint = ceilingBezierEnd.p0;
-							fk = (fk - 0.5f) * 2;
+							fv = (fv - 0.5f) * 2;
 						}
 						else
-							fk *= 2;
+							fv *= 2;
 					}						
 																
-					Vector3 contourPosition = GeneratePosition(contour[c], ceilingBezierStart, ceilingBezierEnd, fi, fk, startEndPoint, endEndPoint);
+					Vector3 contourPosition = GeneratePosition(contour[c], ceilingBezierStart, ceilingBezierEnd, fh, fv, startEndPoint, endEndPoint);
 										
-					vertices[c * offset + i * verticalIntersections + k] = contourPosition;
+					vertices[c * offset + h * verticalIntersections + v] = contourPosition;
 				}								
 			}									
 		}
@@ -97,7 +100,8 @@ public class MeshFromBezierGenerator : MonoBehaviour
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
-        
+		normals = mesh.normals;
+            
 		GetComponent<MeshFilter>().mesh = mesh;
 		
 		GetComponent<MeshCollider>().sharedMesh = mesh;
@@ -127,12 +131,13 @@ public class MeshFromBezierGenerator : MonoBehaviour
 		return contourPosition;
     }
     
-	public Vector3 GenerateNormal( UBezier heightStart, UBezier heightEnd, float c, float h)
+	public Vector3 GenerateNormal( int c, float h, float v)
 	{
-		Vector3 normalStart = heightStart.EvaluateNormal(h);
-		Vector3 normalEnd = heightEnd.EvaluateNormal(h);
-		
-		return Vector3.Slerp(normalStart, normalEnd, c);
+		int hIndex = (int)(h * (horziontalIntersections - 1));
+		int vIndex = (int)(v * (verticalIntersections - 1));
+		int index = offset * c + hIndex * verticalIntersections + vIndex;
+				
+		return normals[index];
 	}
     
 	            
@@ -143,8 +148,13 @@ public class MeshFromBezierGenerator : MonoBehaviour
 	            
 	void OnDrawGizmos()
 	{
-            if(Application.isPlaying == false || vertices == null)
+        if(Application.isPlaying == false || vertices == null)
 			return;
+			
+//		for(int i = 0; i < vertices.Length ; i++)
+//		{
+//			Gizmos.DrawLine(vertices[i], vertices[i] + normals[i]);
+//		}	
 //			
 //		foreach(Vector3 vertex in vertices)
 //		{

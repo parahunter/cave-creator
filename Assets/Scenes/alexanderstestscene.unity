@@ -13,7 +13,7 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 1
-  m_FogColor: {r: .114186838, g: .242647052, b: .194806725, a: .525490224}
+  m_FogColor: {r: 0, g: .110294104, b: .0692190751, a: .525490224}
   m_FogMode: 2
   m_FogDensity: .00499999989
   m_LinearFogStart: 0
@@ -2934,7 +2934,7 @@ GameObject:
   - 4: {fileID: 792667981}
   - 114: {fileID: 792667982}
   m_Layer: 0
-  m_Name: PortalPlacer
+  m_Name: PortalGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2964,7 +2964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 11400000, guid: 762e780775ed3784fa8cf67b3954cec7, type: 2}
   placementCategory: 0
-  placementGenerator: {fileID: 0}
+  placementGenerator: {fileID: 1138514866}
+  player: {fileID: 762042945}
 --- !u!1 &889609651
 GameObject:
   m_ObjectHideFlags: 0
@@ -3210,15 +3211,15 @@ MonoBehaviour:
   - pointsToSizeCorelation:
       serializedVersion: 2
       m_Curve:
-      - time: -.0170222335
-        value: -.0042635221
-        inSlope: .784915805
-        outSlope: .784915805
+      - time: -.00363335479
+        value: 2.98301005
+        inSlope: 1.39631653
+        outSlope: 1.39631653
         tangentMode: 10
-      - time: 1.51437557
-        value: 1.19775486
-        inSlope: .784915805
-        outSlope: .784915805
+      - time: 3.00014448
+        value: 7.17723465
+        inSlope: 1.39631653
+        outSlope: 1.39631653
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
@@ -3886,18 +3887,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSizeModifier: .699999988
   maxSizeModifier: 1
-  minLength: 20
+  minLength: 50
   maxLength: 200
-  minWidth: 20
+  minWidth: 50
   maxWidth: 200
-  minHeight: 15
+  minHeight: 30
   maxHeight: 100
   curveAngleDitterDegrees: 80
-  curveMidPointsMinDistance: .200000003
-  curveMidPointsMaxDistance: 1.10000002
+  curveMidPointsMinDistance: .100000001
+  curveMidPointsMaxDistance: .5
   minHeightDitter: 1
   maxHeightDitter: 1
   meshGenerator: {fileID: 1734254927}
+  pointGenerationCenterCorrection:
+    serializedVersion: 2
+    m_Curve:
+    - time: .00393498968
+      value: .00514729694
+      inSlope: .176490098
+      outSlope: .176490098
+      tangentMode: 0
+    - time: 1.00384343
+      value: .99535203
+      inSlope: 2.53803086
+      outSlope: 2.53803086
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!4 &1734254926
 Transform:
   m_ObjectHideFlags: 0
@@ -3920,8 +3936,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4461042b2ec15634fb15592eb3fdac6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horziontalIntersections: 20
-  verticalIntersections: 100
+  horziontalIntersections: 10
+  verticalIntersections: 50
   invert: 1
 --- !u!33 &1734254928
 MeshFilter:
@@ -4008,15 +4024,15 @@ MonoBehaviour:
   sizeDistribution:
     serializedVersion: 2
     m_Curve:
-    - time: .00130039011
-      value: .700520754
-      inSlope: 1.25764334
-      outSlope: 1.25764334
+    - time: .00811268389
+      value: .496600628
+      inSlope: 3.82039738
+      outSlope: 3.82039738
       tangentMode: 0
-    - time: 1.01759923
-      value: 1.48595893
-      inSlope: 2.02170992
-      outSlope: 2.02170992
+    - time: 1.00669956
+      value: 3.00751662
+      inSlope: 3.23888755
+      outSlope: 3.23888755
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

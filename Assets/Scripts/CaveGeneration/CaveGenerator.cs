@@ -19,6 +19,7 @@ public class CaveGenerator : ProceduralGenerator
 	public float maxHeightDitter = 0.8f;
 	
 	public MeshFromBezierGenerator meshGenerator;
+	public AnimationCurve pointGenerationCenterCorrection;
 	
 	Vector3[] contourPoints = new Vector3[8];
 	UBezier[] contourCurve = new UBezier[8];
@@ -54,12 +55,17 @@ public class CaveGenerator : ProceduralGenerator
 		Vector3 startEndPoint = heightStart.p0;
 		Vector3 endEndPoint = heightEnd.p0;
 								
-		float verticalT = Random.Range(0f, 1f);
+		float verticalT =  pointGenerationCenterCorrection.Evaluate( Random.Range(0f, 1f) );
 		float horizontalT = Random.Range(0f, 1f);
 				
 		CavePlacementPoint point = new CavePlacementPoint();
 		point.position = meshGenerator.GeneratePosition( contour, heightStart, heightEnd, horizontalT, verticalT, startEndPoint, endEndPoint); 
-		point.normal = meshGenerator.GenerateNormal(heightStart, heightEnd, horizontalT, verticalT);
+		
+		verticalT = + (verticalT / 2);
+		point.normal = meshGenerator.GenerateNormal(c, horizontalT, verticalT);
+		
+		print (verticalT);
+		
 		
 		return point;
 	}

@@ -50,12 +50,24 @@ public class CavePlacementGenerator : MonoBehaviour
 						
 			placementPoints.Add(points);
 		}
-						
-		
-			
-		
 		
 	}
+	
+	void OnDrawGizmosSelected()
+	{
+		if(!Application.isPlaying)
+			return;
+	
+		Gizmos.color = Color.blue;
+		foreach(List<CavePlacementPoint> points in placementPoints)
+		{
+			foreach(CavePlacementPoint point in points)
+			{
+				Gizmos.DrawLine(point.position, point.position + point.normal * 10);
+			}
+		}
+	}
+	
 
 	void Start()
 	{
