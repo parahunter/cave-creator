@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CaveGenerator : ProceduralGenerator 
 {
+	public float minSizeModifier = 1f;
+	public float maxSizeModifier = 2f;
 	public float minLength = 30f;
 	public float maxLength = 50f;
 	public float minWidth = 30f;
@@ -23,11 +25,13 @@ public class CaveGenerator : ProceduralGenerator
 	UBezier[] ceilingCurves = new UBezier[8];
 	UBezier[] floorCurves = new UBezier[8];
 	
-	
+	float size;
 	
 	#region implemented abstract members of ProceduralGenerator
 	public override void GenerateRepresentation ()
 	{
+		size = Random.Range(minSizeModifier, maxSizeModifier);
+		
 		GenerateContourPoints();
 		GenerateContourCurve();
 		GenerateCeilingAndFloorCurves();
@@ -36,23 +40,23 @@ public class CaveGenerator : ProceduralGenerator
 	void GenerateContourPoints()
 	{
 		//first generate primary control points
-		contourPoints[0] = Vector3.left * Random.Range(minWidth, maxWidth); 
-		contourPoints[2] = Vector3.forward * Random.Range(minLength, maxLength); 
-		contourPoints[4] = -Vector3.left * Random.Range(minWidth, maxWidth); 
-		contourPoints[6] = -Vector3.forward * Random.Range(minLength, maxLength); 
+		contourPoints[0] = Vector3.left * Random.Range(minWidth, maxWidth) * size; 
+		contourPoints[2] = Vector3.forward * Random.Range(minLength, maxLength) * size; 
+		contourPoints[4] = -Vector3.left * Random.Range(minWidth, maxWidth) * size; 
+		contourPoints[6] = -Vector3.forward * Random.Range(minLength, maxLength) * size; 
 		
 		//then generate secondary points
-		contourPoints[1] =  Vector3.left * Random.Range(minWidth, maxWidth) + 
-							Vector3.forward * Random.Range(minLength, maxLength); 
+		contourPoints[1] =  (Vector3.left * Random.Range(minWidth, maxWidth) + 
+			Vector3.forward * Random.Range(minLength, maxLength) ) * size; 
 		
-		contourPoints[3] = -Vector3.left * Random.Range(minWidth, maxWidth) + 
-						    Vector3.forward * Random.Range(minLength, maxLength); 
+		contourPoints[3] = (-Vector3.left * Random.Range(minWidth, maxWidth) + 
+		                    Vector3.forward * Random.Range(minLength, maxLength)) *size; 
 		
-		contourPoints[5] = -Vector3.left * Random.Range(minWidth, maxWidth) + 
-							-Vector3.forward * Random.Range(minLength, maxLength); 
+		contourPoints[5] = (-Vector3.left * Random.Range(minWidth, maxWidth) + 
+			-Vector3.forward * Random.Range(minLength, maxLength)) * size; 
 		
-		contourPoints[7] = Vector3.left * Random.Range(minWidth, maxWidth) + 
-						  -Vector3.forward * Random.Range(minLength, maxLength); 
+		contourPoints[7] = (Vector3.left * Random.Range(minWidth, maxWidth) + 
+		                    -Vector3.forward * Random.Range(minLength, maxLength)) * size; 
 	}
 	
 	void GenerateContourCurve()
@@ -87,18 +91,18 @@ public class CaveGenerator : ProceduralGenerator
 		
 		for(int i = 0 ; i < ceilingCurves.Length ; i++)
 		{
-			Vector3 p0 = Vector3.up * ceilingHeight;
+			Vector3 p0 = Vector3.up * ceilingHeight * size;
 			
-			Vector3 direction = Vector3.up * ceilingHeight + contourCurve[i].p0 * Random.Range(minHeightDitter, maxHeightDitter) - contourCurve[i].p0;
+			Vector3 direction = p0 + contourCurve[i].p0 * Random.Range(minHeightDitter, maxHeightDitter) - contourCurve[i].p0;
 			
-			Vector3 p1 = contourCurve[i].p0 + direction;
-			Vector3 p2 = p1;			
+			Vector3 p1 = contourCurve[i].p0 * 0.5f + direction;
+			Vector3 p2 = contourCurve[i].p0 + direction;			
 			Vector3 p3 = contourCurve[i].p0;
 			
 			ceilingCurves[i] = new UBezier(p0, p1, p2, p3);
 			
-			p1 = contourCurve[i].p0 - direction;
-			p2 = p1;
+			p1 = contourCurve[i].p0 * 0.5f - direction;
+			p2 = contourCurve[i].p0 - direction;
 			p0.y *= -1;
 						
 			floorCurves[i] = new UBezier(p3, p2, p1, p0);									

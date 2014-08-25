@@ -12,10 +12,10 @@ SceneSettings:
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
-  m_Fog: 0
-  m_FogColor: {r: .687626779, g: .588235259, b: 1, a: 1}
-  m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_Fog: 1
+  m_FogColor: {r: .114186838, g: .242647052, b: .194806725, a: .525490224}
+  m_FogMode: 2
+  m_FogDensity: .00499999989
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: 0, g: 0, b: 0, a: 0}
@@ -3675,16 +3675,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51af87812441c4b4eab25052a2997ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minLength: 10
+  minSizeModifier: 2
+  maxSizeModifier: 2
+  minLength: 20
   maxLength: 200
-  minWidth: 10
+  minWidth: 20
   maxWidth: 200
   minHeight: 15
-  maxHeight: 50
-  curveAngleDitterDegrees: 50
-  curveMidPointsMinDistance: .100000001
-  curveMidPointsMaxDistance: .800000012
-  minHeightDitter: .5
+  maxHeight: 100
+  curveAngleDitterDegrees: 80
+  curveMidPointsMinDistance: .200000003
+  curveMidPointsMaxDistance: 1.10000002
+  minHeightDitter: 1
   maxHeightDitter: 1
   meshGenerator: {fileID: 1734254927}
 --- !u!4 &1734254926
@@ -3710,7 +3712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horziontalIntersections: 20
-  verticalIntersections: 200
+  verticalIntersections: 100
   invert: 1
 --- !u!33 &1734254928
 MeshFilter:
