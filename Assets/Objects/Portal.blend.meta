@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2bfe291fcc52161469579a7f8182e242
+guid: f00b35b0bc14bd9428afceeeb880b8e9
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,7 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Torus
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -60,6 +60,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
