@@ -47,8 +47,8 @@ public class MeshFromBezierGenerator : MonoBehaviour
 						{
 							ceilingBezierStart = floor[c];
 							ceilingBezierEnd = floor[(c+1) % floor.Length];
-							startEndPoint = ceilingBezierStart.p0;
-							endEndPoint = ceilingBezierEnd.p0;
+//							startEndPoint = ceilingBezierStart.p0;
+//							endEndPoint = ceilingBezierEnd.p0;
 							fk = (fk - 0.5f) * 2;
 						}
 						else

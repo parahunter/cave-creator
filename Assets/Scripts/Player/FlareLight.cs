@@ -30,6 +30,8 @@ public class FlareLight : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
+		Destroy(transform.parent.gameObject);
+		
         light.enabled = false;
     }
 }
