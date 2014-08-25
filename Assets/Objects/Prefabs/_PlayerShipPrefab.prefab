@@ -863,9 +863,9 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: .640770733, g: .433823526, b: 1, a: 1}
-  m_Intensity: .730000019
-  m_Range: 146.279999
-  m_SpotAngle: 44.7547188
+  m_Intensity: 1.64999998
+  m_Range: 200
+  m_SpotAngle: 36.2999992
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -968,9 +968,9 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: .640770733, g: .433823526, b: 1, a: 1}
-  m_Intensity: .730000019
-  m_Range: 146.279999
-  m_SpotAngle: 44.7547188
+  m_Intensity: 1.64999998
+  m_Range: 200
+  m_SpotAngle: 36.2999992
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -1216,6 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 150
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1228,6 +1229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -150
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
