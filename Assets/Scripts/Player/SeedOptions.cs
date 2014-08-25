@@ -36,7 +36,16 @@ public class SeedOptions : MonoBehaviour {
     {
         if (displayGUI)
         {
-			if(firstFrame)
+			if(Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Q)
+			{
+				userSeed = "";
+				displayGUI = false;
+			}
+			
+			if(Event.current.type == EventType.KeyDown && (Event.current.keyCode == KeyCode.Return || Event.current.keyCode == KeyCode.KeypadEnter))
+                GenNewCave = true;
+            
+            if(firstFrame)
 			{
 				firstFrame = false;
 				GUI.FocusControl("seedField");
@@ -52,8 +61,7 @@ public class SeedOptions : MonoBehaviour {
 
             GenNewCave = GUI.Button(new Rect(100, 205, 80, 20), "Generate");
             
-			if(Event.current.isKey && (Event.current.keyCode == KeyCode.Return || Event.current.keyCode == KeyCode.KeypadEnter))
-				GenNewCave = true;
+		
         }
     }
 
@@ -62,9 +70,14 @@ public class SeedOptions : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             displayGUI = !displayGUI;
-			firstFrame = true;
+            
+			userSeed = "";
+            firstFrame = true;
             Screen.lockCursor = !displayGUI;
         }
+        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        	Application.Quit();
     }
 
 

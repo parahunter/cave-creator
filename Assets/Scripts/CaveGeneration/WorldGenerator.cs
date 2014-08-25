@@ -23,12 +23,6 @@ public class WorldGenerator : MonoBehaviour
 		
 	}
 	
-	void Update()
-	{
-		if(Input.GetKeyDown(KeyCode.G))
-			GenerateWorld(Random.Range(0, 1000000));
-	}
-	
 	public void GenerateWorld(int seed)
 	{
 		print( "generating world with seed " + seed);
