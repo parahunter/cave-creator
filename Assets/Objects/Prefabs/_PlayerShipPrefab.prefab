@@ -26,6 +26,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400010}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
   - 82: {fileID: 8200004}
@@ -1244,6 +1245,17 @@ MonoBehaviour:
   Flare: {fileID: 100004, guid: 2795cf5174ff18e4ca6015e08ffa0b0b, type: 2}
   fireForce: 5000
   timeDelay: 5
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615074d5682230c4c98536dda62b8d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
