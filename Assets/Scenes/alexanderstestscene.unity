@@ -1267,15 +1267,15 @@ MonoBehaviour:
   sizeDistribution:
     serializedVersion: 2
     m_Curve:
-    - time: .015676219
-      value: .572772861
-      inSlope: 6.92066908
-      outSlope: 6.92066908
+    - time: .0183520075
+      value: 1.03496027
+      inSlope: 5.28767061
+      outSlope: 5.28767061
       tangentMode: 0
-    - time: 1.04451728
-      value: 6.91134453
-      inSlope: 23.5062103
-      outSlope: 23.5062103
+    - time: 1.00170469
+      value: 3.26336479
+      inSlope: 7.74133492
+      outSlope: 7.74133492
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2767,6 +2767,7 @@ GameObject:
   - 4: {fileID: 762042945}
   - 114: {fileID: 762042949}
   - 114: {fileID: 762042948}
+  - 114: {fileID: 762042952}
   - 54: {fileID: 762042947}
   - 65: {fileID: 762042946}
   - 82: {fileID: 762042951}
@@ -2977,6 +2978,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &762042952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: e62ab1c8daee4534784f3f4d6f7226f5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254066690}
+  m_GameObject: {fileID: 762042944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615074d5682230c4c98536dda62b8d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &778913024
 GameObject:
   m_ObjectHideFlags: 0
@@ -3074,7 +3087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caveGenerator: {fileID: 1734254925}
   placementGenerator: {fileID: 1138514866}
-  debugSeed: 9019
+  debugSeed: 1337
 --- !u!4 &889609653
 Transform:
   m_ObjectHideFlags: 0
@@ -3262,6 +3275,21 @@ MonoBehaviour:
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
+    amountRandomness:
+      serializedVersion: 2
+      m_Curve:
+      - time: .00260078069
+        value: .611979127
+        inSlope: .383810639
+        outSlope: .383810639
+        tangentMode: 10
+      - time: 1
+        value: .994791567
+        inSlope: .383810639
+        outSlope: .383810639
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
     heightBias:
       serializedVersion: 2
       m_Curve:
@@ -3295,6 +3323,21 @@ MonoBehaviour:
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
+    amountRandomness:
+      serializedVersion: 2
+      m_Curve:
+      - time: 6.6102948e-05
+        value: .999739587
+        inSlope: -.000522337505
+        outSlope: -.000522337505
+        tangentMode: 10
+      - time: .99739939
+        value: .999218643
+        inSlope: -.000522337505
+        outSlope: -.000522337505
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
     heightBias:
       serializedVersion: 2
       m_Curve:
@@ -3318,16 +3361,36 @@ MonoBehaviour:
       m_Curve:
       - time: .00289190933
         value: -.0351801813
-        inSlope: 98.6371231
-        outSlope: 98.6371231
+        inSlope: 167.775482
+        outSlope: 167.775482
         tangentMode: 10
-      - time: 1.51445937
-        value: 149.061478
-        inSlope: 98.6371231
-        outSlope: 98.6371231
+      - time: 1.49156952
+        value: 249.728424
+        inSlope: 167.775482
+        outSlope: 167.775482
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
+    amountRandomness:
+      serializedVersion: 2
+      m_Curve:
+      - time: .00911625847
+        value: 0
+        inSlope: 4.47962618
+        outSlope: 4.47962618
+        tangentMode: 10
+      - time: .139327809
+        value: .583299041
+        inSlope: 2.48189187
+        outSlope: 2.48189187
+        tangentMode: 10
+      - time: 1
+        value: .99999994
+        inSlope: .484157503
+        outSlope: .484157503
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
     heightBias:
       serializedVersion: 2
       m_Curve:
@@ -3910,6 +3973,36 @@ MonoBehaviour:
     primary: {r: .338235319, g: .2600227, b: .189013854, a: 0}
     secondary: {r: .0843425468, g: .194627732, b: .286764681, a: 0}
     third: {r: 1, g: .242647052, b: .242647052, a: 0}
+  - fogColor: {r: .507352948, g: .287251294, b: .287251294, a: 0}
+    fogMode: 3
+    fogDensity: 1
+    primary: {r: .870182574, g: 1, b: .0588235259, a: 0}
+    secondary: {r: .941176474, g: .717814088, b: .131487906, a: 0}
+    third: {r: 1, g: .411764681, b: .411764681, a: 0}
+  - fogColor: {r: .675862074, g: .450367659, b: .875, a: 0}
+    fogMode: 2
+    fogDensity: .0500000007
+    primary: {r: .126557097, g: .279411793, b: .088343434, a: 0}
+    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
+    third: {r: .0220588446, g: 1, b: .0692698807, a: 0}
+  - fogColor: {r: .338235319, g: .338235319, b: .338235319, a: 0}
+    fogMode: 1
+    fogDensity: .00499999989
+    primary: {r: .602941155, g: .494827569, b: .487672985, a: 0}
+    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
+    third: {r: 1, g: 0, b: 0, a: 0}
+  - fogColor: {r: 1, g: 1, b: 1, a: 0}
+    fogMode: 1
+    fogDensity: .00100000005
+    primary: {r: .514705896, g: .514705896, b: .514705896, a: 0}
+    secondary: {r: .220588207, g: .220588207, b: .220588207, a: 0}
+    third: {r: 0, g: 0, b: 0, a: 0}
+  - fogColor: {r: .272058845, g: .216212288, b: .180038944, a: 0}
+    fogMode: 1
+    fogDensity: .00499999989
+    primary: {r: .22953707, g: .279411793, b: .189013854, a: 0}
+    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
+    third: {r: .415518731, g: .632352948, b: .311526805, a: 0}
 --- !u!1 &1621992177
 GameObject:
   m_ObjectHideFlags: 0

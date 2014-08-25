@@ -8,6 +8,7 @@ public class CavePlacementGenerator : MonoBehaviour
 	public class PlacementCategory
 	{
 		public AnimationCurve pointsToSizeCorelation;
+		public AnimationCurve amountRandomness;
 		public AnimationCurve heightBias;
 		public float minDistanceToOtherObjects;
 		public float minDistanceToSameObjects;
@@ -35,7 +36,8 @@ public class CavePlacementGenerator : MonoBehaviour
 		{
 			PlacementCategory category = categories[i];
 			
-			int amount = (int)category.pointsToSizeCorelation.Evaluate(caveGenerator.size);
+			int amount = (int)category.pointsToSizeCorelation.Evaluate(caveGenerator.size) ;
+			amount = (int)(amount * category.amountRandomness.Evaluate(Random.Range(0, 1f)));
 			
 			int counter = 0;
 			
