@@ -5,6 +5,7 @@ public class ColorManager : MonoBehaviour
 {
 	public Material caveMaterial;
 	public Material crystalMaterial;
+	public Material budMaterial;
 	
 	[System.Serializable]
 	public class ColorSet
@@ -27,6 +28,7 @@ public class ColorManager : MonoBehaviour
 		RenderSettings.fogMode = set.fogMode;
 		RenderSettings.fogColor = set.fogColor;
 		caveMaterial.color = set.primary;
+		budMaterial.color = set.secondary;
 		crystalMaterial.color = set.third;
 	}
 	

@@ -39,7 +39,7 @@ public class MeshFromBezierGenerator : MonoBehaviour
 					float fv = (float)v / (verticalIntersections - 1);
 					
 					UBezier ceilingBezierStart = ceiling[c];
-					UBezier ceilingBezierEnd = ceiling[(c+1) % floor.Length];
+					UBezier ceilingBezierEnd = ceiling[(c+1) % ceiling.Length];
 					
 					Vector3 startEndPoint = ceilingBezierStart.p3;
 					Vector3 endEndPoint = ceilingBezierEnd.p3;

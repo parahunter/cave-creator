@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Crystal
-  m_Shader: {fileID: 3, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Bud
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -16,6 +16,13 @@ Material:
       data:
         first:
           name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DecalTex
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -29,8 +36,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .0220588446, g: 1, b: .0692698807, a: 0}
+        second: {r: .53940767, g: .188581303, b: .801470578, a: 0}
       data:
         first:
           name: _SpecColor
-        second: {r: .764705896, g: 1, b: .785801232, a: 1}
+        second: {r: .5, g: .5, b: .5, a: 1}
