@@ -3,8 +3,7 @@ using System.Collections;
 
 public class CaveGenerator : ProceduralGenerator 
 {
-	public float minSizeModifier = 1f;
-	public float maxSizeModifier = 2f;
+	public AnimationCurve sizeCurve;
 	public float minLength = 30f;
 	public float maxLength = 50f;
 	public float minWidth = 30f;
@@ -35,7 +34,9 @@ public class CaveGenerator : ProceduralGenerator
 	#region implemented abstract members of ProceduralGenerator
 	public override void GenerateRepresentation ()
 	{
-		size = Random.Range(minSizeModifier, maxSizeModifier);
+		size = sizeCurve.Evaluate(Random.Range(0, 1f));
+		
+		print ("cave size " + size);
 		
 		GenerateContourPoints();
 		GenerateContourCurve();
@@ -55,9 +56,9 @@ public class CaveGenerator : ProceduralGenerator
 		Vector3 startEndPoint = heightStart.p0;
 		Vector3 endEndPoint = heightEnd.p0;
 								
-		float verticalT =  pointGenerationCenterCorrection.Evaluate( Random.Range(0f, 1f) );
+		float verticalT = bias + (1 - bias) * pointGenerationCenterCorrection.Evaluate( Random.Range(0, 1f) );
 		float horizontalT = Random.Range(0f, 1f);
-				
+				 
 		CavePlacementPoint point = new CavePlacementPoint();
 		//point.position = meshGenerator.GeneratePosition( contour, heightStart, heightEnd, horizontalT, verticalT, startEndPoint, endEndPoint); 
 		

@@ -1257,9 +1257,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToPlace:
-  - {fileID: 400000, guid: 6a4f376acfcd95f4588b758a11db028f, type: 2}
+  - {fileID: 400196, guid: 5f50deca39aacab4487e54621151fc30, type: 2}
+  - {fileID: 400220, guid: 03810425e74770e42a8101a269ef06db, type: 2}
+  - {fileID: 400000, guid: e6142f695e04ada40aeabc171769d1e3, type: 2}
+  - {fileID: 400000, guid: e5287a23d4d20cf48b5738ecc6572958, type: 2}
+  placeUpright: 1
   placementGenerator: {fileID: 1138514866}
-  category: 2
+  category: 1
   sizeDistribution:
     serializedVersion: 2
     m_Curve:
@@ -1273,6 +1277,21 @@ MonoBehaviour:
       inSlope: 23.5062103
       outSlope: 23.5062103
       tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  rotationDitter:
+    serializedVersion: 2
+    m_Curve:
+    - time: -.00130039011
+      value: .00260416651
+      inSlope: .980656624
+      outSlope: .980656624
+      tangentMode: 10
+    - time: 1.00780237
+      value: .99218744
+      inSlope: .980656624
+      outSlope: .980656624
+      tangentMode: 10
     m_PreInfinity: 2
     m_PostInfinity: 2
 --- !u!1 &362760368
@@ -1439,9 +1458,9 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: .640770733, g: .433823526, b: 1, a: 1}
-  m_Intensity: .730000019
-  m_Range: 146.279999
-  m_SpotAngle: 44.7547188
+  m_Intensity: 1.64999998
+  m_Range: 200
+  m_SpotAngle: 36.2999992
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -2670,9 +2689,9 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: .640770733, g: .433823526, b: 1, a: 1}
-  m_Intensity: .730000019
-  m_Range: 146.279999
-  m_SpotAngle: 44.7547188
+  m_Intensity: 1.64999998
+  m_Range: 200
+  m_SpotAngle: 36.2999992
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -2738,6 +2757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 150
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &762042944
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,15 +3266,15 @@ MonoBehaviour:
     heightBias:
       serializedVersion: 2
       m_Curve:
-      - time: -.00130039011
-        value: .99999994
-        inSlope: 5.96055543e-08
-        outSlope: 5.96055543e-08
+      - time: .00630154274
+        value: .000614464283
+        inSlope: .00166567834
+        outSlope: .00166567834
         tangentMode: 10
-      - time: .998684406
-        value: 1
-        inSlope: 5.96055543e-08
-        outSlope: 5.96055543e-08
+      - time: 1.00864732
+        value: .00228404999
+        inSlope: .00166567834
+        outSlope: .00166567834
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3264,15 +3284,15 @@ MonoBehaviour:
   - pointsToSizeCorelation:
       serializedVersion: 2
       m_Curve:
-      - time: .500101507
-        value: -.0111230547
-        inSlope: 1.48901641
-        outSlope: 1.48901641
+      - time: .537774444
+        value: .186250329
+        inSlope: 1.91246021
+        outSlope: 1.91246021
         tangentMode: 10
-      - time: 1.50782967
-        value: 1.48940063
-        inSlope: 1.48901641
-        outSlope: 1.48901641
+      - time: 2.00702667
+        value: 2.9961369
+        inSlope: 1.91246021
+        outSlope: 1.91246021
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
@@ -3281,13 +3301,13 @@ MonoBehaviour:
       m_Curve:
       - time: -.00652224198
         value: .950260401
-        inSlope: -.000259063818
-        outSlope: -.000259063818
+        inSlope: .00698575797
+        outSlope: .00698575797
         tangentMode: 10
-      - time: .998684406
-        value: .949999988
-        inSlope: -.000259063818
-        outSlope: -.000259063818
+      - time: .999991536
+        value: .957291663
+        inSlope: .00698575797
+        outSlope: .00698575797
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3312,15 +3332,15 @@ MonoBehaviour:
     heightBias:
       serializedVersion: 2
       m_Curve:
-      - time: -.00130039011
-        value: .99999994
-        inSlope: -.00259400741
-        outSlope: -.00259400741
+      - time: -.000223065726
+        value: -.0515645146
+        inSlope: .0525828339
+        outSlope: .0525828339
         tangentMode: 10
-      - time: 1.00260079
-        value: .997395813
-        inSlope: -.00259400741
-        outSlope: -.00259400741
+      - time: 1.00513566
+        value: .00130009651
+        inSlope: .0525828339
+        outSlope: .0525828339
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3596,6 +3616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -150
+  Axis: {x: 0, y: 0, z: 1}
 --- !u!1 &1420588771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,14 +4040,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51af87812441c4b4eab25052a2997ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSizeModifier: .699999988
-  maxSizeModifier: 2
+  sizeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: -6.91590831e-05
+      value: .415931106
+      inSlope: 5.34092665
+      outSlope: 5.34092665
+      tangentMode: 10
+    - time: .10700839
+      value: .98782444
+      inSlope: .38111037
+      outSlope: .38111037
+      tangentMode: 0
+    - time: .940200806
+      value: 1.28437996
+      inSlope: 1.11644757
+      outSlope: 1.11644757
+      tangentMode: 0
+    - time: .995140791
+      value: 2.05318141
+      inSlope: 8.79859257
+      outSlope: 8.79859257
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
   minLength: 30
-  maxLength: 200
+  maxLength: 250
   minWidth: 30
-  maxWidth: 200
+  maxWidth: 250
   minHeight: 30
-  maxHeight: 100
+  maxHeight: 200
   curveAngleDitterDegrees: 80
   curveMidPointsMinDistance: .100000001
   curveMidPointsMaxDistance: .699999988
@@ -4154,6 +4198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToPlace:
   - {fileID: 400000, guid: 6a4f376acfcd95f4588b758a11db028f, type: 2}
+  placeUpright: 0
   placementGenerator: {fileID: 1138514866}
   category: 2
   sizeDistribution:
@@ -4169,6 +4214,11 @@ MonoBehaviour:
       inSlope: 23.5062103
       outSlope: 23.5062103
       tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  rotationDitter:
+    serializedVersion: 2
+    m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
 --- !u!1 &1927056795
