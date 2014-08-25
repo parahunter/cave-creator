@@ -133,14 +133,22 @@ public class MeshFromBezierGenerator : MonoBehaviour
     
 	public Vector3 GenerateNormal( int c, float h, float v)
 	{
-		int hIndex = (int)(h * (horziontalIntersections - 1));
+		int hIndex = (int)(h * (horziontalIntersections));
 		int vIndex = (int)(v * (verticalIntersections - 1));
 		int index = offset * c + hIndex * verticalIntersections + vIndex;
-				
+						 		
 		return normals[index];
 	}
     
-	            
+	public Vector3 GenerateVertexPosition( int c, float h, float v)
+	{
+		int hIndex = (int)(h * (horziontalIntersections));
+		int vIndex = (int)(v * (verticalIntersections - 1));
+		int index = offset * c + hIndex * verticalIntersections + vIndex;
+		
+		return vertices[index];
+	}
+		            
 	int VertexIndex(int absolouteIndex)
 	{
 		return absolouteIndex % vertices.Length;	

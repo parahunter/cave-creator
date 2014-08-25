@@ -34,6 +34,9 @@ public class Portalgenerator : MonoBehaviour
 			{
 				portal.seed = PortalMessage.message.oldSeed;
 				
+				player.position = portal.playerSpawnPoint.position;
+				player.LookAt(Vector3.zero);
+				
 				Destroy(PortalMessage.message.gameObject);
 			}
 			else

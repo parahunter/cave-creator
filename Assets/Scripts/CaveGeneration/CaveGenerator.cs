@@ -59,13 +59,11 @@ public class CaveGenerator : ProceduralGenerator
 		float horizontalT = Random.Range(0f, 1f);
 				
 		CavePlacementPoint point = new CavePlacementPoint();
-		point.position = meshGenerator.GeneratePosition( contour, heightStart, heightEnd, horizontalT, verticalT, startEndPoint, endEndPoint); 
+		//point.position = meshGenerator.GeneratePosition( contour, heightStart, heightEnd, horizontalT, verticalT, startEndPoint, endEndPoint); 
 		
-		verticalT = + (verticalT / 2);
+		verticalT = 0.5f + (verticalT / 2);
 		point.normal = meshGenerator.GenerateNormal(c, horizontalT, verticalT);
-		
-		print (verticalT);
-		
+		point.position = meshGenerator.GenerateVertexPosition(c, horizontalT, verticalT);
 		
 		return point;
 	}

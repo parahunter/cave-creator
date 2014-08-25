@@ -4024,15 +4024,15 @@ MonoBehaviour:
   sizeDistribution:
     serializedVersion: 2
     m_Curve:
-    - time: .00811268389
-      value: .496600628
-      inSlope: 3.82039738
-      outSlope: 3.82039738
+    - time: .015676219
+      value: .572772861
+      inSlope: 6.92066908
+      outSlope: 6.92066908
       tangentMode: 0
-    - time: 1.00669956
-      value: 3.00751662
-      inSlope: 3.23888755
-      outSlope: 3.23888755
+    - time: 1.04451728
+      value: 6.91134453
+      inSlope: 23.5062103
+      outSlope: 23.5062103
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
