@@ -40,7 +40,7 @@ public class Portalgenerator : MonoBehaviour
 				Destroy(PortalMessage.message.gameObject);
 			}
 			else
-				portal.seed = Random.Range(0, int.MaxValue);
+				portal.seed = WorldGenerator.currentSeed + i;
         }		
 								
 	}

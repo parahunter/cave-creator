@@ -9,7 +9,8 @@ public class CavePlacementGenerator : MonoBehaviour
 	{
 		public AnimationCurve pointsToSizeCorelation;
 		public AnimationCurve heightBias;
-		public float minDistanceBetweenPoints;
+		public float minDistanceToOtherObjects;
+		public float minDistanceToSameObjects;
 		public bool disregardOtherPlacedObjects = false;
 		
 	}
@@ -39,16 +40,50 @@ public class CavePlacementGenerator : MonoBehaviour
 			int counter = 0;
 			
 			List<CavePlacementPoint> points = new List<CavePlacementPoint>(amount);
+			placementPoints.Add(points);
 			while(counter < amount)
 			{
 				CavePlacementPoint point = caveGenerator.GetPointOnSurface(category.heightBias);
+				
+				int failsafeCounter = 0;
+               	if(!category.disregardOtherPlacedObjects)
+				{
+					bool canPlace = true;
+					for(int k = i ; k >= 0 ; k--)
+					{
+						PlacementCategory categoryToCheckAgainst = categories[k];
+
+						float measure;
+						if(k == i)
+							measure = categoryToCheckAgainst.minDistanceToSameObjects;
+                        else
+							measure = categoryToCheckAgainst.minDistanceToOtherObjects;
+                                
+						float distanceSquared = Mathf.Pow( measure, 2);
+						List<CavePlacementPoint> pointsToCheckAgainst = placementPoints[k];
+						
+						foreach(CavePlacementPoint pointToCheckAgainst in pointsToCheckAgainst)
+						{
+							float distance = (point.position - pointToCheckAgainst.position).sqrMagnitude;
+							if(distanceSquared > distance)
+								canPlace = false;
+						}
+						    
+					}
+					
+					if(canPlace == false && failsafeCounter < 100)
+					{
+						failsafeCounter++;
+						continue;
+					}
+				}
 				
 				points.Add(point);
 				
 				counter++;
 			}
-						
-			placementPoints.Add(points);
+			
+			print ("points added " + points.Count);			
 		}
 		
 	}
