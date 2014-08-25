@@ -15,7 +15,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0, g: .110294104, b: .0692190751, a: .525490224}
   m_FogMode: 2
-  m_FogDensity: .00499999989
+  m_FogDensity: .00700000022
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: 0, g: 0, b: 0, a: 0}
@@ -1257,8 +1257,8 @@ Light:
   m_Type: 0
   m_Color: {r: .797160208, g: .411764681, b: 1, a: 1}
   m_Intensity: 6.15999985
-  m_Range: 15
-  m_SpotAngle: 40
+  m_Range: 30
+  m_SpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -2608,6 +2608,22 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10800004, guid: e62ab1c8daee4534784f3f4d6f7226f5, type: 2}
+      propertyPath: m_Range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: e62ab1c8daee4534784f3f4d6f7226f5, type: 2}
+      propertyPath: m_Range
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: e62ab1c8daee4534784f3f4d6f7226f5, type: 2}
+      propertyPath: m_SpotAngle
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800004, guid: e62ab1c8daee4534784f3f4d6f7226f5, type: 2}
+      propertyPath: m_SpotAngle
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e62ab1c8daee4534784f3f4d6f7226f5, type: 2}
   m_RootGameObject: {fileID: 762042944}
@@ -3240,20 +3256,20 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
     minDistanceToOtherObjects: 20
-    minDistanceToSameObjects: 70
+    minDistanceToSameObjects: 100
     disregardOtherPlacedObjects: 0
   - pointsToSizeCorelation:
       serializedVersion: 2
       m_Curve:
-      - time: -.0170222335
-        value: -.0042635221
-        inSlope: .784915805
-        outSlope: .784915805
+      - time: .500101507
+        value: -.0111230547
+        inSlope: 1.48901641
+        outSlope: 1.48901641
         tangentMode: 10
-      - time: 1.51437557
-        value: 1.19775486
-        inSlope: .784915805
-        outSlope: .784915805
+      - time: 1.50782967
+        value: 1.48940063
+        inSlope: 1.48901641
+        outSlope: 1.48901641
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
@@ -3272,8 +3288,8 @@ MonoBehaviour:
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
-    minDistanceToOtherObjects: 5
-    minDistanceToSameObjects: 3
+    minDistanceToOtherObjects: 50
+    minDistanceToSameObjects: 50
     disregardOtherPlacedObjects: 0
   - pointsToSizeCorelation:
       serializedVersion: 2
@@ -3470,8 +3486,8 @@ Light:
   m_Type: 0
   m_Color: {r: .797160208, g: .411764681, b: 1, a: 1}
   m_Intensity: 6.15999985
-  m_Range: 15
-  m_SpotAngle: 40
+  m_Range: 30
+  m_SpotAngle: 20
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -3890,7 +3906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minSizeModifier: .699999988
-  maxSizeModifier: 1
+  maxSizeModifier: 2
   minLength: 50
   maxLength: 200
   minWidth: 50
@@ -4111,8 +4127,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1948741025}
   - 114: {fileID: 1948741024}
-  - 82: {fileID: 1948741027}
-  - 82: {fileID: 1948741026}
   m_Layer: 0
   m_Name: MusicController
   m_TagString: Untagged
@@ -4136,10 +4150,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ffa89915e0c8f5f41a32699bbdc9b2da, type: 3}
   - {fileID: 8300000, guid: 7efad8825fe847e47b5cafdbb3383f33, type: 3}
   - {fileID: 8300000, guid: 1e3e039d53106954d8aa0dcc2a3a559a, type: 3}
-  sources:
-  - {fileID: 1948741027}
-  - {fileID: 1948741026}
-  fadeTime: 10
+  fadeTime: 5
   volume: .5
   fadeCurve:
     serializedVersion: 2
@@ -4167,122 +4178,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 514834727}
---- !u!82 &1948741026
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1948741023}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!82 &1948741027
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1948741023}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1 &2113883147
 GameObject:
   m_ObjectHideFlags: 0
