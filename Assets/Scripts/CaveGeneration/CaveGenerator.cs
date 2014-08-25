@@ -25,8 +25,12 @@ public class CaveGenerator : ProceduralGenerator
 	UBezier[] ceilingCurves = new UBezier[8];
 	UBezier[] floorCurves = new UBezier[8];
 	
-	float size;
-	
+	public float size
+	{
+		get;
+		private set;
+	}
+		
 	#region implemented abstract members of ProceduralGenerator
 	public override void GenerateRepresentation ()
 	{
@@ -35,6 +39,29 @@ public class CaveGenerator : ProceduralGenerator
 		GenerateContourPoints();
 		GenerateContourCurve();
 		GenerateCeilingAndFloorCurves();
+	}
+	
+	public CavePlacementPoint GetPointOnSurface(AnimationCurve heightBias)
+	{
+		int c = Random.Range(0, contourCurve.Length);
+		UBezier contour = contourCurve[Random.Range(0, contourCurve.Length)];
+		
+		float bias = heightBias.Evaluate(Random.Range(0f, 1f));
+		
+		UBezier heightStart = floorCurves[c];
+		UBezier heightEnd = floorCurves[(c+1) % floorCurves.Length];
+		
+		Vector3 startEndPoint = heightStart.p0;
+		Vector3 endEndPoint = heightEnd.p0;
+								
+		float verticalT = Random.Range(0f, 1f);
+		float horizontalT = Random.Range(0f, 1f);
+				
+		CavePlacementPoint point = new CavePlacementPoint();
+		point.position = meshGenerator.GeneratePosition( contour, heightStart, heightEnd, horizontalT, verticalT, startEndPoint, endEndPoint); 
+		point.normal = meshGenerator.GenerateNormal(heightStart, heightEnd, horizontalT, verticalT);
+		
+		return point;
 	}
 	
 	void GenerateContourPoints()

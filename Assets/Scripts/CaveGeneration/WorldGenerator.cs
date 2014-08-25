@@ -4,6 +4,7 @@ using System.Collections;
 public class WorldGenerator : MonoBehaviour 
 {
 	public CaveGenerator caveGenerator;
+	public CavePlacementGenerator placementGenerator;
 	public int debugSeed = 1337;
 			
 	// Use this for initialization
@@ -26,7 +27,7 @@ public class WorldGenerator : MonoBehaviour
 		
 		caveGenerator.GenerateRepresentation();
 		
-		
+		placementGenerator.GeneratePlacementPoints();
 		
 		caveGenerator.GenerateMesh();
 	}

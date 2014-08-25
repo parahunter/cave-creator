@@ -104,7 +104,7 @@ public class MeshFromBezierGenerator : MonoBehaviour
         
     }
     
-    Vector3 GeneratePosition(UBezier contour, UBezier heightStart, UBezier heightEnd, float c, float h, Vector3 startP3, Vector3 endP3)
+   	public Vector3 GeneratePosition(UBezier contour, UBezier heightStart, UBezier heightEnd, float c, float h, Vector3 startP3, Vector3 endP3)
     {
 		Vector3 ceilStart = heightStart.Evaluate(h);
 		Vector3 ceilEnd = heightEnd.Evaluate(h);
@@ -126,6 +126,14 @@ public class MeshFromBezierGenerator : MonoBehaviour
 		
 		return contourPosition;
     }
+    
+	public Vector3 GenerateNormal( UBezier heightStart, UBezier heightEnd, float c, float h)
+	{
+		Vector3 normalStart = heightStart.EvaluateNormal(h);
+		Vector3 normalEnd = heightEnd.EvaluateNormal(h);
+		
+		return Vector3.Slerp(normalStart, normalEnd, c);
+	}
     
 	            
 	int VertexIndex(int absolouteIndex)
