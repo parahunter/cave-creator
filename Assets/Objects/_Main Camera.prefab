@@ -40,7 +40,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -86,10 +86,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followSpeed: .00150000001
-  Distance: .300000012
-  Angle: -50
-  ScrollLimitLower: .200000003
-  ScrollLimitUpper: .800000012
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

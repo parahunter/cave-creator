@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public float ABSpeedMod;
 
+    private AudioSource[] Audios;
+
     private float forwardSpeedOri;
     private float engRotSpeedOri;
     private float engLightOri;
@@ -27,6 +29,10 @@ public class PlayerMovement : MonoBehaviour {
 
     void Start()
     {
+        Screen.lockCursor = true;
+
+        Audios = GetComponents<AudioSource>();
+
         Engine1Rot = Engine1.GetComponent<Rotation>();
         Engine2Rot = Engine2.GetComponent<Rotation>();
         Engine1PS = Engine1.gameObject.transform.FindChild("Particle System").GetComponent<ParticleSystem>();
@@ -69,6 +75,8 @@ public class PlayerMovement : MonoBehaviour {
             Engine1Rot.rotationSpeed = Mathf.Lerp(engRotSpeedOri, maxRotSpeed, fwThrust);
             Engine2Rot.rotationSpeed = Mathf.Lerp(-engRotSpeedOri, -maxRotSpeed, fwThrust);
             EngineLight.intensity = Mathf.Lerp(engLightOri, maxLightIntensity, fwThrust);
+
+            Audios[1].volume = Mathf.Lerp(0.15f, 0.5f, fwThrust);
 
             if (fwThrust > 0.05)
             {
