@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class ObjectPlacer : MonoBehaviour 
 {
-	public Transform objectToPlace;
+	public Transform[] objectsToPlace;
+
 	
 	public CavePlacementGenerator placementGenerator;
 	
@@ -24,6 +25,8 @@ public class ObjectPlacer : MonoBehaviour
 		
 		foreach(CavePlacementPoint point in points)
 		{
+			Transform objectToPlace = objectsToPlace[Random.Range(0, objectsToPlace.Length)];
+			
 			Transform instantiated = (Transform)Instantiate(objectToPlace, point.position, Quaternion.identity);
 		
 			instantiated.parent = transform;

@@ -52,7 +52,7 @@ public class CavePlacementGenerator : MonoBehaviour
 					for(int k = i ; k >= 0 ; k--)
 					{
 						PlacementCategory categoryToCheckAgainst = categories[k];
-
+						
 						float measure;
 						if(k == i)
 							measure = categoryToCheckAgainst.minDistanceToSameObjects;
@@ -68,7 +68,6 @@ public class CavePlacementGenerator : MonoBehaviour
 							if(distanceSquared > distance)
 								canPlace = false;
 						}
-						    
 					}
 					
 					if(canPlace == false && failsafeCounter < 100)

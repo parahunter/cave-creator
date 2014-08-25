@@ -1218,6 +1218,63 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!1 &197457549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 197457550}
+  - 114: {fileID: 197457551}
+  m_Layer: 0
+  m_Name: MonumentPlacer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197457550
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197457549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -66.6254883, y: 56.6871567, z: 93.1893616}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 514834727}
+--- !u!114 &197457551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197457549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b8d214bf6afbc41872038dbeb50027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToPlace:
+  - {fileID: 400000, guid: 6a4f376acfcd95f4588b758a11db028f, type: 2}
+  placementGenerator: {fileID: 1138514866}
+  category: 2
+  sizeDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - time: .015676219
+      value: .572772861
+      inSlope: 6.92066908
+      outSlope: 6.92066908
+      tangentMode: 0
+    - time: 1.04451728
+      value: 6.91134453
+      inSlope: 23.5062103
+      outSlope: 23.5062103
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &362760368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1525,7 @@ Transform:
   m_Children:
   - {fileID: 1734254926}
   - {fileID: 1590467275}
+  - {fileID: 197457550}
   - {fileID: 1948741025}
   - {fileID: 792667981}
   - {fileID: 1840276176}
@@ -3190,13 +3248,13 @@ MonoBehaviour:
       m_Curve:
       - time: -.00130039011
         value: .99999994
-        inSlope: -.00259400741
-        outSlope: -.00259400741
+        inSlope: 5.96055543e-08
+        outSlope: 5.96055543e-08
         tangentMode: 10
-      - time: 1.00260079
-        value: .997395813
-        inSlope: -.00259400741
-        outSlope: -.00259400741
+      - time: .998684406
+        value: 1
+        inSlope: 5.96055543e-08
+        outSlope: 5.96055543e-08
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3221,15 +3279,15 @@ MonoBehaviour:
     heightBias:
       serializedVersion: 2
       m_Curve:
-      - time: -.00130039011
-        value: .99999994
-        inSlope: -.00259400741
-        outSlope: -.00259400741
+      - time: -.00652224198
+        value: .950260401
+        inSlope: -.000259063818
+        outSlope: -.000259063818
         tangentMode: 10
-      - time: 1.00260079
-        value: .997395813
-        inSlope: -.00259400741
-        outSlope: -.00259400741
+      - time: .998684406
+        value: .949999988
+        inSlope: -.000259063818
+        outSlope: -.000259063818
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3963,15 +4021,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSizeModifier: .699999988
   maxSizeModifier: 2
-  minLength: 50
+  minLength: 30
   maxLength: 200
-  minWidth: 50
+  minWidth: 30
   maxWidth: 200
   minHeight: 30
   maxHeight: 100
   curveAngleDitterDegrees: 80
   curveMidPointsMinDistance: .100000001
-  curveMidPointsMaxDistance: .5
+  curveMidPointsMaxDistance: .699999988
   minHeightDitter: 1
   maxHeightDitter: 1
   meshGenerator: {fileID: 1734254927}
@@ -4066,7 +4124,7 @@ GameObject:
   - 4: {fileID: 1840276176}
   - 114: {fileID: 1840276177}
   m_Layer: 0
-  m_Name: SmallObjectPlacer
+  m_Name: CrystalPlacer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4094,7 +4152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b8d214bf6afbc41872038dbeb50027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 400000, guid: 6a4f376acfcd95f4588b758a11db028f, type: 2}
+  objectsToPlace:
+  - {fileID: 400000, guid: 6a4f376acfcd95f4588b758a11db028f, type: 2}
   placementGenerator: {fileID: 1138514866}
   category: 2
   sizeDistribution:
