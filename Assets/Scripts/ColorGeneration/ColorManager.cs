@@ -1,11 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ColorManager : MonoBehaviour 
 {
 	public Material caveMaterial;
 	public Material crystalMaterial;
 	public Material budMaterial;
+	
+	public List<ColorScheme> colorSchemes = new List<ColorScheme>();
+	
+	public ColorSet currentSet;
+	
+	public float minFog = 0.001f;
+	public float maxFog = 0.1f;
+	
+	
 	
 	[System.Serializable]
 	public class ColorSet
@@ -17,23 +27,32 @@ public class ColorManager : MonoBehaviour
 		public Color secondary = Color.white;
 		public Color third = Color.white;	
 	}
-	
-	public ColorSet[] sets;
-	
+		
 	// Use this for initialization
 	void Start () 
 	{
-		ColorSet set = sets[WorldGenerator.currentSeed % sets.Length];
+		currentSet = GenerateSet();
 		
-		RenderSettings.fogMode = set.fogMode;
-		RenderSettings.fogColor = set.fogColor;
-		caveMaterial.color = set.primary;
-		budMaterial.color = set.secondary;
-		crystalMaterial.color = set.third;
+		RenderSettings.fogMode = currentSet.fogMode;
+		RenderSettings.fogColor = currentSet.fogColor;
+		caveMaterial.color = currentSet.primary;
+		budMaterial.color = currentSet.secondary;
+		crystalMaterial.color = currentSet.third;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	ColorSet GenerateSet()
+	{
+		ColorSet set = new ColorSet();
+		Color[] colors = colorSchemes[Random.Range(0, colorSchemes.Count)].GetColors(Random.Range(0, Mathf.Infinity));
+		
+		set.primary = colors[0];
+		set.secondary = colors[1];
+		set.third = colors[2];
+		set.fogColor = colors[3];
+		
+		set.fogMode = FogMode.Linear;
+		set.fogDensity = Random.Range(minFog, maxFog);
+				
+		return set;
 	}
 }
