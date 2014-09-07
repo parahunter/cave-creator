@@ -3088,6 +3088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caveGenerator: {fileID: 1734254925}
   placementGenerator: {fileID: 1138514866}
+  colorManager: {fileID: 1590467276}
   debugSeed: 1337
 --- !u!4 &889609653
 Transform:
