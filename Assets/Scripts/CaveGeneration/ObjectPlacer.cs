@@ -34,7 +34,6 @@ public class ObjectPlacer : MonoBehaviour
 			instantiated.parent = transform;
 			
 			if(placeUpright && rotationDitter.Evaluate(Random.Range(0,1f)) > 0.5f)
-            
             {
             	instantiated.Rotate(Vector3.up * Random.Range(0, 360f));
 			}

@@ -104,8 +104,7 @@ public class CavePlacementGenerator : MonoBehaviour
 		}
 	}
 	
-
-	void Start()
+	public void PlaceStuff()
 	{
 		if(onPointsGenerated != null)
 			onPointsGenerated(this);

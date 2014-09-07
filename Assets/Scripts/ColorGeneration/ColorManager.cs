@@ -29,7 +29,7 @@ public class ColorManager : MonoBehaviour
 	}
 		
 	// Use this for initialization
-	void Start () 
+	public void AssignColors () 
 	{
 		currentSet = GenerateSet();
 		
