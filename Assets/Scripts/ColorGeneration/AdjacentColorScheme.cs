@@ -14,9 +14,7 @@ public class AdjacentColorScheme : ColorScheme
 
 	#region implemented abstract members of ColorScheme
 	public override Color[] GetColors (float baseValue)
-	{
-		print (baseValue);
-	
+	{	
 		float basehue = Mathf.Repeat(baseValue, 360f);
 		
 		float oppositeHue = basehue + 180f;
@@ -25,11 +23,7 @@ public class AdjacentColorScheme : ColorScheme
 		
 		float secondaryHue = Mathf.Repeat(oppositeHue - hueDif, 360f);
 		float thirdHue = Mathf.Repeat(oppositeHue + hueDif, 360f);
-		
-		print ("1" + basehue);		
-		print ("2" + secondaryHue);
-		print ("3" + thirdHue);
-																
+										
 		Color[] colors = new Color[4];
 		
 		//fog color
