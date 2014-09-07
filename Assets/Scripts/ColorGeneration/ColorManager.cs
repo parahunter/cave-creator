@@ -35,6 +35,8 @@ public class ColorManager : MonoBehaviour
 		
 		RenderSettings.fogMode = currentSet.fogMode;
 		RenderSettings.fogColor = currentSet.fogColor;
+		RenderSettings.fogDensity = currentSet.fogDensity;
+		
 		caveMaterial.color = currentSet.primary;
 		budMaterial.color = currentSet.secondary;
 		crystalMaterial.color = currentSet.third;
@@ -50,7 +52,7 @@ public class ColorManager : MonoBehaviour
 		set.third = colors[2];
 		set.fogColor = colors[3];
 		
-		set.fogMode = FogMode.Linear;
+		set.fogMode = FogMode.Exponential;
 		set.fogDensity = Random.Range(minFog, maxFog);
 				
 		return set;
