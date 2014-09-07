@@ -4038,6 +4038,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1590467275}
   - 114: {fileID: 1590467276}
+  - 114: {fileID: 1590467277}
+  - 114: {fileID: 1590467278}
   m_Layer: 0
   m_Name: ColorManager
   m_TagString: Untagged
@@ -4070,73 +4072,50 @@ MonoBehaviour:
   caveMaterial: {fileID: 2100000, guid: 3417103bf44fa0c4b99cb4d822c1809f, type: 2}
   crystalMaterial: {fileID: 2100000, guid: ca2be787672ba204cb5ded7bbd73e044, type: 2}
   budMaterial: {fileID: 2100000, guid: c10fa16f6b202034e94171c5a34fd201, type: 2}
-  sets:
-  - fogColor: {r: .601643622, g: .748463869, b: .786764741, a: 1}
-    fogMode: 1
-    fogDensity: .00100000005
-    primary: {r: .201392993, g: .149870232, b: .308823526, a: 0}
-    secondary: {r: .0464965478, g: .462656587, b: .632352948, a: 0}
-    third: {r: .810344815, g: .595588207, b: 1, a: 0}
-  - fogColor: {r: .00405678991, g: .117647052, b: 0, a: 0}
-    fogMode: 3
-    fogDensity: .00999999978
-    primary: {r: .0656574294, g: .242647052, b: .0214100406, a: 0}
-    secondary: {r: .10272491, g: .183823526, b: .106640026, a: 0}
-    third: {r: 0, g: 1, b: .668966055, a: 0}
-  - fogColor: {r: .0378460139, g: .354000062, b: .367647052, a: 0}
-    fogMode: 2
-    fogDensity: .100000001
-    primary: {r: .086288929, g: .136600643, b: .20588237, a: 0}
-    secondary: {r: .0843425468, g: .194627732, b: .286764681, a: 0}
-    third: {r: .669063568, g: .727941155, b: .715759635, a: 0}
-  - fogColor: {r: 0, g: 0, b: 0, a: 0}
-    fogMode: 1
-    fogDensity: 0
-    primary: {r: 0, g: .0463995822, b: .110294104, a: 0}
-    secondary: {r: .0843425468, g: .194627732, b: .286764681, a: 0}
-    third: {r: 1, g: 0, b: .972414017, a: 0}
-  - fogColor: {r: 1, g: .767647028, b: .41911763, a: 0}
-    fogMode: 3
-    fogDensity: .00100000005
-    primary: {r: .338235319, g: .2600227, b: .189013854, a: 0}
-    secondary: {r: .0843425468, g: .194627732, b: .286764681, a: 0}
-    third: {r: 1, g: .242647052, b: .242647052, a: 0}
-  - fogColor: {r: .507352948, g: .287251294, b: .287251294, a: 0}
-    fogMode: 3
-    fogDensity: 1
-    primary: {r: .870182574, g: 1, b: .0588235259, a: 0}
-    secondary: {r: .941176474, g: .717814088, b: .131487906, a: 0}
-    third: {r: 1, g: .411764681, b: .411764681, a: 0}
-  - fogColor: {r: .675862074, g: .450367659, b: .875, a: 0}
-    fogMode: 2
-    fogDensity: .0500000007
-    primary: {r: .126557097, g: .279411793, b: .088343434, a: 0}
-    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
-    third: {r: .0220588446, g: 1, b: .0692698807, a: 0}
-  - fogColor: {r: .338235319, g: .338235319, b: .338235319, a: 0}
-    fogMode: 1
+  colorSchemes: []
+  currentSet:
+    fogColor: {r: 1, g: 1, b: 1, a: 1}
+    fogMode: 0
     fogDensity: .00499999989
-    primary: {r: .602941155, g: .494827569, b: .487672985, a: 0}
-    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
-    third: {r: 1, g: 0, b: 0, a: 0}
-  - fogColor: {r: 1, g: 1, b: 1, a: 0}
-    fogMode: 1
-    fogDensity: .00100000005
-    primary: {r: .514705896, g: .514705896, b: .514705896, a: 0}
-    secondary: {r: .220588207, g: .220588207, b: .220588207, a: 0}
-    third: {r: 0, g: 0, b: 0, a: 0}
-  - fogColor: {r: .272058845, g: .216212288, b: .180038944, a: 0}
-    fogMode: 1
-    fogDensity: .00499999989
-    primary: {r: .22953707, g: .279411793, b: .189013854, a: 0}
-    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
-    third: {r: .415518731, g: .632352948, b: .311526805, a: 0}
-  - fogColor: {r: .122856006, g: .0806120411, b: .154411793, a: 0}
-    fogMode: 1
-    fogDensity: .00499999989
-    primary: {r: .189013854, g: .279411793, b: .253227562, a: 0}
-    secondary: {r: .53940767, g: .188581303, b: .801470578, a: 0}
-    third: {r: .380622864, g: .396536827, b: .404411793, a: 0}
+    primary: {r: 1, g: 1, b: 1, a: 1}
+    secondary: {r: 1, g: 1, b: 1, a: 1}
+    third: {r: 1, g: 1, b: 1, a: 1}
+  minFog: 0
+  maxFog: .00999999978
+--- !u!114 &1590467277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590467274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e651f2bdc622940adc8f441d662349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
+  minSaturation: 0
+  maxSaturation: 1
+  minValue: 0
+  maxValue: 1
+--- !u!114 &1590467278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590467274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c347610e74004b44d947b1a1e2d0db25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 1
+  minDiffHue: 5
+  maxDifHue: 170
+  minSaturation: 0
+  maxSaturation: 1
+  minValue: 0
+  maxValue: 1
 --- !u!1 &1621992177
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,7 +43,7 @@ public class ColorManager : MonoBehaviour
 	ColorSet GenerateSet()
 	{
 		ColorSet set = new ColorSet();
-		Color[] colors = colorSchemes[Random.Range(0, colorSchemes.Count)].GetColors(Random.Range(0, Mathf.Infinity));
+		Color[] colors = colorSchemes[Random.Range(0, colorSchemes.Count)].GetColors(Random.Range(0, 99999f));
 		
 		set.primary = colors[0];
 		set.secondary = colors[1];

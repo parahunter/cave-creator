@@ -5,8 +5,11 @@ public abstract class ColorScheme : MonoBehaviour
 {
 	public abstract Color[] GetColors(float baseValue);
 	
+	public bool activated = true;
+	
 	void Awake()
 	{
-		GetComponent<ColorManager>().colorSchemes.Add(this);
+		if(activated)
+			GetComponent<ColorManager>().colorSchemes.Add(this);
 	}
 }
