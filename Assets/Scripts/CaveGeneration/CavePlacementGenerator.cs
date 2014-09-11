@@ -36,18 +36,20 @@ public class CavePlacementGenerator : MonoBehaviour
 		{
 			PlacementCategory category = categories[i];
 			
-			int amount = (int)category.pointsToSizeCorelation.Evaluate(caveGenerator.size) ;
+			int amount = (int)category.pointsToSizeCorelation.Evaluate(caveGenerator.size);
+			print ("amount " + amount);
 			amount = (int)(amount * category.amountRandomness.Evaluate(Random.Range(0, 1f)));
 			
 			int counter = 0;
 			
 			List<CavePlacementPoint> points = new List<CavePlacementPoint>(amount);
 			placementPoints.Add(points);
+			int failsafeCounter = 0;
 			while(counter < amount)
 			{
 				CavePlacementPoint point = caveGenerator.GetPointOnSurface(category.heightBias);
 				
-				int failsafeCounter = 0;
+				
                	if(!category.disregardOtherPlacedObjects)
 				{
 					bool canPlace = true;
@@ -77,6 +79,8 @@ public class CavePlacementGenerator : MonoBehaviour
 						failsafeCounter++;
 						continue;
 					}
+					else if(failsafeCounter > 100)
+						break;
 				}
 				
 				points.Add(point);

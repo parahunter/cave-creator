@@ -3246,7 +3246,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1138514864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.6254883, y: 56.6871567, z: 93.1893616}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 514834727}
@@ -3265,30 +3265,30 @@ MonoBehaviour:
   - pointsToSizeCorelation:
       serializedVersion: 2
       m_Curve:
-      - time: -.00363335479
-        value: 2.98301005
-        inSlope: 1.42598546
-        outSlope: 1.42598546
+      - time: -.0101976404
+        value: 4.0022068
+        inSlope: .000115756193
+        outSlope: .000115756193
         tangentMode: 10
-      - time: 5.326859
-        value: 10.5842152
-        inSlope: 1.42598546
-        outSlope: 1.42598546
+      - time: 5.25841665
+        value: 4.00281668
+        inSlope: .000115756193
+        outSlope: .000115756193
         tangentMode: 10
       m_PreInfinity: 0
       m_PostInfinity: 0
     amountRandomness:
       serializedVersion: 2
       m_Curve:
-      - time: .00260078069
-        value: .611979127
-        inSlope: .383810639
-        outSlope: .383810639
+      - time: 6.76512718e-06
+        value: 1.00017071
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
-      - time: 1
-        value: .994791567
-        inSlope: .383810639
-        outSlope: .383810639
+      - time: .99998647
+        value: 1.00017071
+        inSlope: 0
+        outSlope: 0
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3307,8 +3307,8 @@ MonoBehaviour:
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
-    minDistanceToOtherObjects: 20
-    minDistanceToSameObjects: 100
+    minDistanceToOtherObjects: 22
+    minDistanceToSameObjects: 50
     disregardOtherPlacedObjects: 0
   - pointsToSizeCorelation:
       serializedVersion: 2
@@ -3355,8 +3355,8 @@ MonoBehaviour:
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
-    minDistanceToOtherObjects: 50
-    minDistanceToSameObjects: 50
+    minDistanceToOtherObjects: 120
+    minDistanceToSameObjects: 120
     disregardOtherPlacedObjects: 0
   - pointsToSizeCorelation:
       serializedVersion: 2

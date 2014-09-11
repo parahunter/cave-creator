@@ -83,11 +83,13 @@ public class MusicController : MonoBehaviour
 				accTime += Time.deltaTime;
 				yield return 0;
 			}
+			
+			sources[activeSource % sources.Length].volume = volume;
+			sources[(activeSource + 1) % sources.Length].volume = 0;
 		}
 
-		print (accTime);
-
-		sources[activeSource % sources.Length].volume = volume;
+		
+		
 		
 		yield return 0;
 	}
